@@ -420,7 +420,7 @@ static void *once_check_ipv6(URLContext *h,struct addrinfo *cur_v6_ai)
 {
     TCPContext *s = h->priv_data;
     if (cur_v6_ai->ai_family != AF_INET6) {
-        return;
+        return NULL;
     }
 
     pthread_mutex_lock(&gs_check_ipv6_mutex);
